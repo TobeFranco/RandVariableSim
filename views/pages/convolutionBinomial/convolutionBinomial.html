@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Método de convolución Normal</title>
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>Método de convolución Normal</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img src="icon-settings.png">
+        </div>
+        <div class="col-lg-8">
+          <p class="text-justify">Los métodos convolutivos son métodos que permiten la simulación de una variable aleatoria principal, Y, a través de la suma de otras variables aleatorias X de manera más rápida que a través de otros métodos.</p>
+          <p class="text-justify">La variable aleatoria Binomial con parámetros N y p puede ser generada a través de la suma de N variables aleatorias con distribución de Bernoulli con parámetro p:</p>
+          <img src="eq-main.gif" class="center">
+          <p class="text-justify">Se puede utilizar este método para simular el proceso de control tomando un lote de piezas para contar el número de piezas defectuosas. Es necesario definir el tamaño del lote y la probabilidad de una pieza de ser defectuosa.</p>
+        </div>
+      </div>  
+      <hr />
+      <div class="row">        
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <h4>Datos de entrada</h4>    
+        </div>
+      </div>
+      
+      <form>
+        <div class="row">        
+          <div class="col-lg-4"></div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="n">N (lotes):</label>
+              <input type="number" class="form-control" id="n" min="1" max="100" value="5">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="k">K (piezas por lote):</label>
+              <input type="number" class="form-control" id="k" min="1" max="100" value="1">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="p">P (probabilida de defecto):</label>
+              <input type="number" class="form-control" id="p" step="0.01" min="0" max="1" value="0.5">
+            </div>
+          </div>          
+        </div>        
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8 text-right">
+            <div class="form-group">
+              <input type="button" class="btn btn-primary align-bottom" id="submit" value="Simular">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="results" style="display:none">
+        <hr />
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8">
+            <h4>Resultados</h4>
+            <p id="results-desc"></p>
+            <table class="table table-striped" id="tbl-results"></table>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <script src="convolutionBinomial.js"></script>
+  </body>
+</html>
