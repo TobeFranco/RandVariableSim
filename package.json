@@ -1,0 +1,25 @@
+{
+  "name": "randvariablesim",
+  "version": "1.0.0",
+  "description": "Random Variable Simulator",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "keywords": [
+    "random",
+    "vars",
+    "simulation",
+    "electron",
+    "vue"
+  ],
+  "author": "Tobe, Thanya, Orlando",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "electron": "1.8.3",
+    "jquery": "3.3.1",
+    "popper.js": "1.14.1",
+    "vue": "2.5.16"
+  }
+}
