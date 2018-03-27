@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    
+    <div id="page">
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand h1">Generación de Variables Aleatorias</span>
+            <button class="btn btn-warning" @click.prevent.stop="openPage('about-us')" type="button">Acerca de nosotros...</button>
+        </nav>
+        
+        <div class="container">
+            <h1 class="">Transformada Inversa</h1>
+            <div class="card-deck">
+                <div class="card text-center">
+                    <div class="card-header">Uniforme</div>
+                    <img src="../../assets/img/uniform-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm btn-block" @click.prevent.stop="openPage('uniform-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">Exponencial</div>
+                    <img src="../../assets/img/exp-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm btn-block" @click.prevent.stop="openPage('exp-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">Bernoulli</div>
+                    <img src="../../assets/img/bernoulli-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm btn-block" @click.prevent.stop="openPage('bernoulli-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">Historicos</div>
+                    <img src="../../assets/img/historics-dist.png" alt="Exponential Distribution" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm btn-block" @click.prevent.stop="openPage('historics-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+            </div>
+    
+            <h1 class="">Metodo de Convolución</h1>
+            <div class="card-deck">
+                <div class="card text-center">
+                    <div class="card-header">Erlang</div>
+                    <img src="../../assets/img/erlang-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-lg btn-block" @click.prevent.stop="openPage('erlang-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">Normal</div>
+                    <img src="../../assets/img/normal-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-lg btn-block" @click.prevent.stop="openPage('normal-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">Binomial</div>
+                    <img src="../../assets/img/binomial-dist.png" alt="" class="card-img">
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-lg btn-block" @click.prevent.stop="openPage('binomial-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+            </div>
+    
+            <h1 class="">Metodo de Composición</h1>
+            <div class="card">
+                <div class="card-body row">
+                    <img src="../../assets/img/triangular-dist.png" alt="" class="card-img col-3 w-25 h-25 float-left">
+                    <div class="col-9">
+                        <h4 class="card-title">Triangular</h4>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <button class="btn btn-primary" @click.prevent.stop="openPage('triangular-dist')">Ir al metodo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./home-page.js"></script>
+</body>
+
+</html>
