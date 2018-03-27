@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Triangular Distribution</title>
+  <link rel="stylesheet" type="text/css" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1>Metodo de Composicion Triangular</h1>
+  </div>
+
+  <div class="container" id="page">
+    <div class="row">
+      <div class="col-lg-4 text-center">
+        <img src="../../assets/img/triangular-dist.png" height="300px" width="300px">
+      </div>
+      <div class="col-lg-8">
+        <p class="text-justify">
+          El metodo de composición permite generar variables aleatorias 'x' cuando estas provienen de una funcion de densidad f(x)
+          que puede expresarse como la combinación convexa de 'm' distribuciones de probabilidad f
+          <sub>i</sub>(x).</p>
+        <p class="text-justify">Entonces, la combinación convexa se puede expresar como: </p>
+        <img src="../../assets/img/convex-eq.gif" class="center">
+        <p class="text-justify">donde:</p>
+        <img src="../../assets/img/convex-eq-clar.gif" class="center">
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-8">
+        <h4>Datos de entrada</h4>
+      </div>
+    </div>
+
+    <form>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label for="n">No. Variables:</label>
+            <input v-model.number="n" type="number" name="n" class="form-control">
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="form-group">
+            <label for="min-val">Valor Minimo:</label>
+            <input v-model.number="min" type="number" name="min-val" class="form-control">
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="mode">Moda:</label>
+            <input v-model.number="mode" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="max-val">Valor Máximo:</label>
+            <input v-model.number="max" type="number" class="form-control">
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="results">
+      <hr />
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <h4>Resultados</h4>
+
+          <div v-if="checkErrors" class="alert alert-danger" role="alert">
+            <h3>Hay errores en la entrada de datos:</h3>
+            <ul>
+                <li v-for="error of errors">{{error}}</li>
+            </ul>
+          </div>
+
+          <p id="results-desc"></p>
+          <table class="table table-striped" id="tbl-results">
+            <thead>
+              <tr>
+                <th>No. Variable</th>
+                <th>Variable</th>
+              </tr>
+            </thead>
+            <tbody v-if="!checkErrors">
+              <tr v-for="i in n">
+                <td>{{i}}</td>
+                <td>{{ getRandVar() }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+
+  <script src="triangular-dist.js"></script>
+</body>
+
+</html>
