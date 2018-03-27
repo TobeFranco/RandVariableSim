@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Método de datos históricos</title>
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>Método de datos históricos</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img src="icon-drop.png">
+        </div>
+        <div class="col-lg-8">
+          <p class="text-justify">El método de la transformada inversa puede utilizarse para simular variables aleatorias continuas, lo cual se logra mediante la función acumulada F(x) y la generación de números pseudoaleatorios.</p>
+          <p class="text-justify">La variable aleatoria historica puede calcularse con base en una serie de datos sobre la demanda presentada en un determinado periodo.</p>
+          <p class="text-justify">Se puede utilizar este método para estimar la demanda que se presentará en un determinado periodo en un sistema.</p>
+        </div>
+      </div>  
+      <hr />
+      <div class="row">        
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <h4>Datos de entrada</h4>    
+        </div>
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="m">Días:</label>
+              <input type="number" class="form-control" id="m" min="1" max="100" value="5">
+            </div>
+          </div>        
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="n">Dato historico:</label>
+              <input type="number" class="form-control" id="n" min="1" max="100" value="5">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <input type="button" class="btn btn-primary align-bottom" id="add" value="Agregar">
+            </div>
+          </div>         
+        </div>        
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8 text-right">
+            <div class="form-group">
+              <input type="button" class="btn btn-primary align-bottom" id="submit" value="Simular">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="results" style="display:none">
+        <hr />
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8">
+            <h4>Resultados</h4>
+            <p id="results-desc"></p>
+            <table class="table table-striped" id="tbl-results"></table>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <script src="historics-dist.js"></script>
+  </body>
+</html>
