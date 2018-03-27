@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Método de la transformada inversa exponencial</title>
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>Método de la transformada inversa exponencial</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img src="icon-watch.png">
+        </div>
+        <div class="col-lg-8">
+          <p class="text-justify">El método de la transformada inversa puede utilizarse para simular variables aleatorias continuas, lo cual se logra mediante la función acumulada F(x) y la generación de números pseudoaleatorios.</p>
+          <p class="text-justify">La variable aleatoria exponencial con media 1/λ puede producirse a partir de la generaciónde k variables exponenciales con media 1/kλ:</p>
+          <img src="eq-main.gif" class="center">
+          <p class="text-justify">En específico, la transformada inversa exponencial es útil para simular el estimado del tiempo de espera de los clientes. Basta con conocer el tiempo promedio y definir el número N de clientes.</p>
+        </div>
+      </div>  
+      <hr />
+      <div class="row">        
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+          <h4>Datos de entrada</h4>    
+        </div>
+      </div>
+      
+      <form>
+        <div class="row">        
+          <div class="col-lg-4"></div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="n">N (número de clientes):</label>
+              <input type="number" class="form-control" id="n" min="1" max="100" value="5">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="m">1/λ (media en min. de tiempo de atención):</label>
+              <input type="number" class="form-control" id="m" step="0.0001" min="0.0001" value="1">
+            </div>
+          </div>          
+        </div>        
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8 text-right">
+            <div class="form-group">
+              <input type="button" class="btn btn-primary align-bottom" id="submit" value="Simular">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="results" style="display:none">
+        <hr />
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8">
+            <h4>Resultados</h4>
+            <p id="results-desc"></p>
+            <table class="table table-striped" id="tbl-results">
+              <tr>
+                <th>Cliente</th>
+                <th>Tiempo de espera</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>24.54</td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+              <tr>
+                <td>N</td>
+                <td>23.54</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <script src="exp-dist.js"></script>
+  </body>
+</html>
